@@ -11,7 +11,7 @@ export interface OperacionResponse {
 }
 
 const api = axios.create({
-  baseURL: "http://localhost:8080/api",
+  baseURL: "http://calculadora-backend:8080/api/calculadora",
 });
 
 export const calcularSuma = async (
