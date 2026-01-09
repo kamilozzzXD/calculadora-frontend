@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  calculadora-frontend:
+    image: calculadora-frontend
+    container_name: calculadora-frontend
+    ports:
+      - "3000:80"
+    networks:
+      - calculadora-network
+
+networks:
+  calculadora-network:
+    external: true
