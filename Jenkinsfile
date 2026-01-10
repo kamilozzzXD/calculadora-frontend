@@ -13,8 +13,8 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                echo '🐳 Construyendo imagen Docker del frontend (sin cache)'
-                sh 'docker build --no-cache -t calculadora-frontend:latest .'
+                echo '🐳 Construyendo imagen Docker del frontend'
+                sh 'docker build -t calculadora-frontend:latest .'
             }
         }
 
