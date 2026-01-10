@@ -33,7 +33,7 @@ export const CalculadoraForm = () => {
   return (
     <Paper elevation={3} sx={{ p: 3, maxWidth: 400 }}>
       <Stack spacing={2}>
-        <Typography variant="h6">Calculadora - Sumar</Typography>
+        <Typography variant="h6">Calculadora - Sumar xd</Typography>
 
         <TextField
           label="Número 1"
