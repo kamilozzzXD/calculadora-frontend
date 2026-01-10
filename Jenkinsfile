@@ -1,14 +1,11 @@
 pipeline {
     agent any
 
-    triggers {
-        githubPush()
-    }
-
     stages {
 
         stage('Checkout') {
             steps {
+                echo '📥 Clonando repositorio frontend'
                 git branch: 'develop',
                     url: 'https://github.com/kamilozzzXD/calculadora-frontend.git'
             }
@@ -17,7 +14,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 echo '🐳 Construyendo imagen Docker del frontend'
-                sh 'docker build --no-cache -t calculadora-frontend:latest .'
+                sh 'docker build -t calculadora-frontend:latest .'
             }
         }
 
@@ -40,6 +37,9 @@ pipeline {
     post {
         success {
             echo '✅ Frontend desplegado correctamente'
+        }
+        failure {
+            echo '❌ Error en el pipeline del frontend'
         }
     }
 }
